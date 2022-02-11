@@ -39,6 +39,52 @@ yarn format
 wrangler publish
 ```
 
+## Documentation
+
+### Routes
+
+> Note: All API endpoints deal with JSON.
+
+| METHODS | ENDPOINT                        | DESCRIPTION                                                                        |
+|:-------:|---------------------------------|------------------------------------------------------------------------------------|
+|    *    | /                               | Return a script randomly as application/javascript (to be injected)                |
+|   GET   | /test                           | Webpage to demonstrate and test scripts                                            |
+|   GET   | /api/scripts                    | Return all scripts                                                                 |
+|   GET   | /api/scripts/:id                | Return a specific script                                                           |
+|   PUT   | /api/scripts/:id                | Update the script and return it with `id`. Return the deleted script               |
+|   DEL   | /api/scripts/many/:scriptFilter | Delete many scripts based on filter. Return the remaining scripts                  |
+|   DEL   | /api/scripts/:id                | Delete one script based on `id`. Return the deleted script                         |
+|  POST   | /api/scripts                    | Create a new script. Return the created script with `id`                           |
+|  POST   | /api/scripts/many               | Create many scripts from an array of scripts. Return the created scripts with `id` |
+
+### Models:
+
+* Script
+    * input DTO
+      ```json
+      {
+        "name": "string",
+        "content": "string",
+        "isActivated": "string"
+      }
+      ```
+    * response DTO
+      ```json
+      {
+      "id": "number",
+      "name": "string",
+      "content": "string",
+      "isActivated": "string"
+      }
+      ```
+
+### Params
+
+|     PARAM     | TYPE                               |
+|:-------------:|------------------------------------|
+|      :id      | number                             |
+| :scriptFilter | 'all' or 'activated' or 'disabled' |
+
 ## Author
 
 👤 **Robin RULLO**
