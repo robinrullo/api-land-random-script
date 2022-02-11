@@ -5,13 +5,9 @@ account_id = "d67db13a3ebe7fdd8f769b823c9643f9"
 route = ""
 workers_dev = true
 compatibility_date = "2022-02-07"
+kv_namespaces = [{ binding = "KV_SCRIPTS", id = "57150f7f70994cf0aee8f8e4b856c42d", preview_id = "a3b72963661b4e8b8a8709138ba5d344" }]
 
 [build]
 command = "yarn install && yarn run build"
 [build.upload]
 format = "service-worker"
-
-
-[vars]
-API_URL="https://jsonblob.com/api/uha40/scripts"
-BLOB_ID="940319907325952000"
