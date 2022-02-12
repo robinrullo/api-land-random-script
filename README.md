@@ -48,7 +48,9 @@ wrangler publish
 | METHODS | ENDPOINT                        | DESCRIPTION                                                                        |
 |:-------:|---------------------------------|------------------------------------------------------------------------------------|
 |    *    | /                               | Return a script randomly as application/javascript (to be injected)                |
+|    *    | /:id                            | Return the script with corresponding id as application/javascript (to be injected) |
 |   GET   | /test                           | Webpage to demonstrate and test scripts                                            |
+|   GET   | /test/:id                       | Webpage to demonstrate and test a specific script                                  |
 |   GET   | /api/scripts                    | Return all scripts                                                                 |
 |   GET   | /api/scripts/:id                | Return a specific script                                                           |
 |   PUT   | /api/scripts/:id                | Update the script and return it with `id`. Return the deleted script               |
