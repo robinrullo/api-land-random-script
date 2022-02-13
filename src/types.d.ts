@@ -9,11 +9,12 @@ export type Script = {
 
 type APIInject = {
   endpoint: string
+  resetEndpoint: string
   content: any
 }
 
-type injectionStatus = {
-  api: string
+type ApiResponseStatus = {
+  apiEndpoint: string
   statusCode?: number
   statusText?: string
 }

@@ -52,6 +52,7 @@ wrangler publish
 |   GET   | /test                           | Webpage to demonstrate and test scripts                                                           |
 |   GET   | /test/:id                       | Webpage to demonstrate and test a specific script                                                 |
 |   GET   | /api/inject/all                 | Inject the APIs with `<script src="https://api-land-random-script.rrullo.workers.dev/"></script>` |
+|   GET   | /api/inject/resetAll            | Reset to default the APIs                                                                         |
 |   GET   | /api/scripts                    | Return all scripts                                                                                |
 |   GET   | /api/scripts/:id                | Return a specific script                                                                          |
 |   PUT   | /api/scripts/:id                | Update the script and return it with `id`. Return the deleted script                              |

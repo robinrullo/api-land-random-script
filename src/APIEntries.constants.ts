@@ -6,6 +6,7 @@ const injection =
 export const pokekmon: APIInject[] = [
   {
     endpoint: 'https://filrouge.uha4point0.fr/V2/pokemon/types',
+    resetEndpoint: 'https://filrouge.uha4point0.fr/V2/reset/pokemon',
     content: {
       id: 100,
       nom: 'maison',
@@ -15,6 +16,7 @@ export const pokekmon: APIInject[] = [
   },
   {
     endpoint: 'https://filrouge.uha4point0.fr/V2/pokemon/pokemons',
+    resetEndpoint: 'https://filrouge.uha4point0.fr/V2/reset/pokemon',
     content: {
       id: 100,
       nom: 'Mew' + injection,
@@ -28,6 +30,7 @@ export const pokekmon: APIInject[] = [
 export const miyasaki: APIInject[] = [
   {
     endpoint: 'https://filrouge.uha4point0.fr/V2/miyasaki/films',
+    resetEndpoint: 'https://filrouge.uha4point0.fr/V2/reset/miyasaki',
     content: {
       id: 100,
       nom: 'Boro la petite chenille',
@@ -41,6 +44,7 @@ export const miyasaki: APIInject[] = [
   },
   {
     endpoint: 'https://filrouge.uha4point0.fr/V2/miyasaki/heros',
+    resetEndpoint: 'https://filrouge.uha4point0.fr/V2/reset/miyasaki',
     content: {
       id: 100,
       nom: 'Boro',
@@ -54,6 +58,7 @@ export const miyasaki: APIInject[] = [
 export const music: APIInject[] = [
   {
     endpoint: 'https://filrouge.uha4point0.fr/V2/music/groupes',
+    resetEndpoint: 'https://filrouge.uha4point0.fr/V2/reset/music',
     content: {
       id: 100,
       nom: 'Polyphia',
@@ -64,6 +69,7 @@ export const music: APIInject[] = [
   },
   {
     endpoint: 'https://filrouge.uha4point0.fr/V2/music/albums',
+    resetEndpoint: 'https://filrouge.uha4point0.fr/V2/reset/music',
     content: {
       id: 100,
       nom: 'New Levels New Devils' + injection,
@@ -79,6 +85,7 @@ export const music: APIInject[] = [
 export const ocean: APIInject[] = [
   {
     endpoint: 'https://filrouge.uha4point0.fr/V2/ocean/especes',
+    resetEndpoint: 'https://filrouge.uha4point0.fr/V2/reset/ocean',
     content: {
       id: 100,
       nom: 'Cinéma',
@@ -89,6 +96,7 @@ export const ocean: APIInject[] = [
   },
   {
     endpoint: 'https://filrouge.uha4point0.fr/V2/ocean/poissons',
+    resetEndpoint: 'https://filrouge.uha4point0.fr/V2/reset/ocean',
     content: {
       id: 100,
       nom: 'Némo',
@@ -106,6 +114,7 @@ export const ocean: APIInject[] = [
 export const shop: APIInject[] = [
   {
     endpoint: 'https://filrouge.uha4point0.fr/V2/shop/clients',
+    resetEndpoint: 'https://filrouge.uha4point0.fr/V2/reset/shop',
     content: {
       id: 100,
       nom: 'kevin',
@@ -118,6 +127,7 @@ export const shop: APIInject[] = [
   },
   {
     endpoint: 'https://filrouge.uha4point0.fr/V2/shop/commandes',
+    resetEndpoint: 'https://filrouge.uha4point0.fr/V2/reset/shop',
     content: {
       id: 100,
       client: 1,
@@ -133,6 +143,7 @@ export const shop: APIInject[] = [
 export const basketball: APIInject[] = [
   {
     endpoint: 'https://filrouge.uha4point0.fr/V2/basketball/equipes',
+    resetEndpoint: 'https://filrouge.uha4point0.fr/V2/reset/basketball',
     content: {
       id: 100,
       nom: 'Beijing Jinyu Ducks' + injection,
@@ -145,6 +156,7 @@ export const basketball: APIInject[] = [
   },
   {
     endpoint: 'https://filrouge.uha4point0.fr/V2/basketball/joueurs',
+    resetEndpoint: 'https://filrouge.uha4point0.fr/V2/reset/basketball',
     content: {
       id: 100,
       nom: 'Shan Tao' + injection,
@@ -160,6 +172,7 @@ export const basketball: APIInject[] = [
 export const UHA40: APIInject[] = [
   {
     endpoint: 'https://filrouge.uha4point0.fr/V2/UHA40/annees',
+    resetEndpoint: 'https://filrouge.uha4point0.fr/V2/reset/UHA40',
     content: {
       id: 100,
       nom: 'UHA 4.0.6' + injection,
@@ -172,6 +185,7 @@ export const UHA40: APIInject[] = [
   },
   {
     endpoint: 'https://filrouge.uha4point0.fr/V2/UHA40/certifications',
+    resetEndpoint: 'https://filrouge.uha4point0.fr/V2/reset/UHA40',
     content: {
       id: 100,
       annee: 1,
@@ -187,6 +201,7 @@ export const UHA40: APIInject[] = [
 export const browseShop: APIInject[] = [
   {
     endpoint: 'https://filrouge.uha4point0.fr/V2/browseShop/categories',
+    resetEndpoint: 'https://filrouge.uha4point0.fr/V2/reset/browseShop',
     content: {
       id: 100,
       nom: 'jeux interdits' + injection,
@@ -199,6 +214,7 @@ export const browseShop: APIInject[] = [
   },
   {
     endpoint: 'https://filrouge.uha4point0.fr/V2/browseShop/produits',
+    resetEndpoint: 'https://filrouge.uha4point0.fr/V2/reset/browseShop',
     content: {
       nom: 'Jeu du foulard' + injection,
       description: "Bandez-vous les yeux et braquez une banque (l'UHA)",
@@ -212,6 +228,7 @@ export const browseShop: APIInject[] = [
 export const UNIX: APIInject[] = [
   {
     endpoint: 'https://filrouge.uha4point0.fr/V2/UNIX/utilisateurs',
+    resetEndpoint: 'https://filrouge.uha4point0.fr/V2/reset/UNIX',
     content: {
       id: 100,
       nom: 'Pierre Master' + injection,
@@ -222,6 +239,7 @@ export const UNIX: APIInject[] = [
   },
   {
     endpoint: 'https://filrouge.uha4point0.fr/V2/UNIX/images',
+    resetEndpoint: 'https://filrouge.uha4point0.fr/V2/reset/UNIX',
     content: {
       id: 100,
       nom: 'Wordpress' + injection,
@@ -237,6 +255,7 @@ export const UNIX: APIInject[] = [
 export const car: APIInject[] = [
   {
     endpoint: 'https://filrouge.uha4point0.fr/V2/car/constructeurs',
+    resetEndpoint: 'https://filrouge.uha4point0.fr/V2/reset/car',
     content: {
       id: 100,
       nom: 'Vilebrequin' + injection,
@@ -248,6 +267,7 @@ export const car: APIInject[] = [
   },
   {
     endpoint: 'https://filrouge.uha4point0.fr/V2/car/voitures',
+    resetEndpoint: 'https://filrouge.uha4point0.fr/V2/reset/car',
     content: {
       id: 100,
       nom: 'Milletipla AMG Stage 1000' + injection,
@@ -263,6 +283,7 @@ export const car: APIInject[] = [
 export const arbres: APIInject[] = [
   {
     endpoint: 'https://filrouge.uha4point0.fr/V2/arbres/types',
+    resetEndpoint: 'https://filrouge.uha4point0.fr/V2/reset/arbres',
     content: {
       id: 100,
       nom: 'Cannabis' + injection,
@@ -275,6 +296,7 @@ export const arbres: APIInject[] = [
   },
   {
     endpoint: 'https://filrouge.uha4point0.fr/V2/arbres/especes',
+    resetEndpoint: 'https://filrouge.uha4point0.fr/V2/reset/arbres',
     content: {
       id: 100,
       nom: 'Chanvre' + injection,

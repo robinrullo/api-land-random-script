@@ -1,4 +1,4 @@
-import { APIInject, injectionStatus } from '../types'
+import { APIInject, ApiResponseStatus } from '../types'
 import { allAPI } from '../APIEntries.constants'
 
 const makeInjection = async (API: APIInject): Promise<Response> => {
@@ -11,16 +11,33 @@ const makeInjection = async (API: APIInject): Promise<Response> => {
   })
 }
 
-export const injectAllApi = async (): Promise<injectionStatus[]> => {
-  const fetchResponses: injectionStatus[] = []
+export const injectAllApi = async (): Promise<ApiResponseStatus[]> => {
+  const fetchResponses: ApiResponseStatus[] = []
   for (const API of allAPI) {
     const res = await makeInjection(API)
     fetchResponses.push({
-      api: API.endpoint,
+      apiEndpoint: API.endpoint,
       statusCode: res.status,
       statusText: res.statusText,
     })
   }
 
   return fetchResponses
+}
+
+export const resetAllApi = async (): Promise<ApiResponseStatus[]> => {
+  const responses: ApiResponseStatus[] = []
+
+  const resetEndpoints = new Set(allAPI.map((api) => api.resetEndpoint))
+
+  for (const resetEndpoint of resetEndpoints) {
+    const res = await fetch(resetEndpoint)
+    responses.push({
+      apiEndpoint: resetEndpoint,
+      statusCode: res.status,
+      statusText: res.statusText,
+    })
+  }
+
+  return responses
 }
