@@ -6,3 +6,14 @@ export type Script = {
   content: string
   isActivated: string
 }
+
+type APIInject = {
+  endpoint: string
+  content: any
+}
+
+type injectionStatus = {
+  api: string
+  statusCode?: number
+  statusText?: string
+}

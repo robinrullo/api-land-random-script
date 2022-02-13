@@ -45,19 +45,20 @@ wrangler publish
 
 > Note: All API endpoints deal with JSON.
 
-| METHODS | ENDPOINT                        | DESCRIPTION                                                                        |
-|:-------:|---------------------------------|------------------------------------------------------------------------------------|
-|    *    | /                               | Return a script randomly as application/javascript (to be injected)                |
-|    *    | /:id                            | Return the script with corresponding id as application/javascript (to be injected) |
-|   GET   | /test                           | Webpage to demonstrate and test scripts                                            |
-|   GET   | /test/:id                       | Webpage to demonstrate and test a specific script                                  |
-|   GET   | /api/scripts                    | Return all scripts                                                                 |
-|   GET   | /api/scripts/:id                | Return a specific script                                                           |
-|   PUT   | /api/scripts/:id                | Update the script and return it with `id`. Return the deleted script               |
-|   DEL   | /api/scripts/many/:scriptFilter | Delete many scripts based on filter. Return the remaining scripts                  |
-|   DEL   | /api/scripts/:id                | Delete one script based on `id`. Return the deleted script                         |
-|  POST   | /api/scripts                    | Create a new script. Return the created script with `id`                           |
-|  POST   | /api/scripts/many               | Create many scripts from an array of scripts. Return the created scripts with `id` |
+| METHODS | ENDPOINT                        | DESCRIPTION                                                                                       |
+|:-------:|---------------------------------|---------------------------------------------------------------------------------------------------|
+|    *    | /                               | Return a script randomly as application/javascript (to be injected)                               |
+|    *    | /:id                            | Return the script with corresponding id as application/javascript (to be injected)                |
+|   GET   | /test                           | Webpage to demonstrate and test scripts                                                           |
+|   GET   | /test/:id                       | Webpage to demonstrate and test a specific script                                                 |
+|   GET   | /api/inject/all                 | Inject the APIs with `<script src="https://api-land-random-script.rrullo.workers.dev/"></script>` |
+|   GET   | /api/scripts                    | Return all scripts                                                                                |
+|   GET   | /api/scripts/:id                | Return a specific script                                                                          |
+|   PUT   | /api/scripts/:id                | Update the script and return it with `id`. Return the deleted script                              |
+|   DEL   | /api/scripts/many/:scriptFilter | Delete many scripts based on filter. Return the remaining scripts                                 |
+|   DEL   | /api/scripts/:id                | Delete one script based on `id`. Return the deleted script                                        |
+|  POST   | /api/scripts                    | Create a new script. Return the created script with `id`                                          |
+|  POST   | /api/scripts/many               | Create many scripts from an array of scripts. Return the created scripts with `id`                |
 
 ### Models:
 

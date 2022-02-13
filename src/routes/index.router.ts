@@ -1,13 +1,13 @@
 import { StatusError, ThrowableRouter, withParams } from 'itty-router-extras'
 import { apiRouter } from './api.router'
 import testController from '../controllers/test.controller'
-import { injectionRouter } from './injectionRouter'
+import { jsScriptRouter } from './jsScript.router'
 
 const { handle, all, get } = ThrowableRouter()
 
 all('/api/*', apiRouter)
 get('/test/:id?', withParams, testController)
-all('/*', injectionRouter)
+all('/*', jsScriptRouter)
 all('*', () => {
   throw new StatusError(404, 'Resource Not Found')
 })
