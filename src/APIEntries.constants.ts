@@ -33,9 +33,9 @@ export const miyasaki: APIInject[] = [
     resetEndpoint: 'https://filrouge.uha4point0.fr/V2/reset/miyasaki',
     content: {
       id: 100,
-      nom: 'Boro la petite chenille',
+      nom: 'Boro la petite chenille' + injection,
       annee: 2018,
-      note: 'visible au Musée Ghibli uniquement' + injection,
+      note: 'visible au Musée Ghibli uniquement',
       Genre: ['documentaire', 'fantasy', 'aventure'],
       image:
         'https://upload.wikimedia.org/wikipedia/en/5/59/Boro_the_Caterpillar.jpg',
@@ -103,7 +103,7 @@ export const ocean: APIInject[] = [
       type: 1,
       dureeVie: 2048,
       note:
-        "Némo est un tout jeune poisson curieux qui vit seul avec son père, Marin. Surprotégé, il a vécu toute sa vie dans un cocon, et ne rêve que d'aventure. Il déborde d'enthousiasme à l'idée d'aller à l'école et de découvrir enfin les merveilles de la Grande Barrière de corail." +
+        'Némo est un tout jeune poisson curieux qui vit seul avec son père, Marin. Surprotégé, il a vécu toute sa vie dans un cocon, et ne rêve que d\'aventure. Il déborde d\'enthousiasme à l\'idée d\'aller à l\'école et de découvrir enfin les merveilles de la Grande Barrière de corail.' +
         injection,
       photo:
         'https://upload.wikimedia.org/wikipedia/commons/3/36/NemoAdvertisingIdahoAquarium.JPG',
@@ -178,7 +178,7 @@ export const UHA40: APIInject[] = [
       nom: 'UHA 4.0.6' + injection,
       mail: 'uha4point0@gmail.fr',
       description:
-        "UHA 4.0.6 est une formation d'une année permettant aux masters et aux personnes expérimentées de développement d'obtenir un doctorat (à condition de payer, bien sûr)",
+        'UHA 4.0.6 est une formation d\'une année permettant aux masters et aux personnes expérimentées de développement d\'obtenir un doctorat (à condition de payer, bien sûr)',
       concerne: 'Toutes personnes au niveau bac',
       compétences: ['LARAVEL', 'PNPM', 'GOOGLE_TRANSLATE'],
     },
@@ -206,7 +206,7 @@ export const browseShop: APIInject[] = [
       id: 100,
       nom: 'jeux interdits' + injection,
       description:
-        "Regroupes l'ensemble des jeux interdits vendus dans notre boutique",
+        'Regroupes l\'ensemble des jeux interdits vendus dans notre boutique',
       filtreTag: '@',
       nbrProduits: 1,
       sousCategorie: ['PJC'],
@@ -217,7 +217,7 @@ export const browseShop: APIInject[] = [
     resetEndpoint: 'https://filrouge.uha4point0.fr/V2/reset/browseShop',
     content: {
       nom: 'Jeu du foulard' + injection,
-      description: "Bandez-vous les yeux et braquez une banque (l'UHA)",
+      description: 'Bandez-vous les yeux et braquez une banque (l\'UHA)',
       categorie: 1,
       URL: 'https://jeudufoulard.com/le-jeu-du-foulard/',
       image: 'https://o2.ldh.be/image/thumb/5a2f9b42cd7095d1cd61b67a.jpg',
@@ -243,7 +243,7 @@ export const UNIX: APIInject[] = [
     content: {
       id: 100,
       nom: 'Wordpress' + injection,
-      description: "Un CMS écrit en php, représentant l'avenir",
+      description: 'Un CMS écrit en php, représentant l\'avenir',
       owner: 2,
       URL: '/pierre/myPictures/hereTheyAre',
       image:
@@ -288,7 +288,7 @@ export const arbres: APIInject[] = [
       id: 100,
       nom: 'Cannabis' + injection,
       taille: 8,
-      note: "Ce sont toutes des plantes originaires d'Asie centrale ou d'Asie du Sud. La classification dans ce genre est encore discutée. Selon la majorité des auteurs il contiendrait une seule espèce, le Chanvre cultivé (Cannabis sativa L.), parfois subdivisée en plusieurs sous-espèces1, généralement sativa, indica et ruderalis (syn. spontanea), tandis que d'autres considèrent que ce sont de simples variétés",
+      note: 'Ce sont toutes des plantes originaires d\'Asie centrale ou d\'Asie du Sud. La classification dans ce genre est encore discutée. Selon la majorité des auteurs il contiendrait une seule espèce, le Chanvre cultivé (Cannabis sativa L.), parfois subdivisée en plusieurs sous-espèces1, généralement sativa, indica et ruderalis (syn. spontanea), tandis que d\'autres considèrent que ce sont de simples variétés',
       ravageurs: ['virus', 'trojan', 'rat', 'XSS'],
       image:
         'https://upload.wikimedia.org/wikipedia/commons/d/db/Cannabis_sativa_001.JPG',
@@ -301,8 +301,42 @@ export const arbres: APIInject[] = [
       id: 100,
       nom: 'Chanvre' + injection,
       type: 1,
-      feuille: "Les feuilles sont ovales, et sentent bon lorsqu'on les fume",
+      feuille: 'Les feuilles sont ovales, et sentent bon lorsqu\'on les fume',
       fruits: 'N.A',
+    },
+  },
+]
+
+export const livres: APIInject[] = [
+  {
+    endpoint: 'https://filrouge.uha4point0.fr/V2/livres/auteurs',
+    resetEndpoint: 'https://filrouge.uha4point0.fr/V2/reset/livres',
+    content: {
+      id: 100,
+      nom: 'SNOWDEN',
+      'prenom': 'Edward',
+      'naissance': '1983-06-21',
+      'mort': '',
+      'biographie': 'Edward Joseph Snowden is an American former computer intelligence consultant who leaked highly classified information from the National Security Agency in 2013, when he was an employee and subcontractor',
+      'photo': 'https://upload.wikimedia.org/wikipedia/commons/6/60/Edward_Snowden-2.jpg',
+      'genres': [
+        'biographie',
+        'fiction',
+        'théâtre',
+      ],
+    },
+  },
+  {
+    endpoint: 'https://filrouge.uha4point0.fr/V2/livres/livres',
+    resetEndpoint: 'https://filrouge.uha4point0.fr/V2/reset/livres',
+    content: {
+      id: 14,
+      titre: 'Mémoires vives',
+      sorti: 2019,
+      synopsis: 'En 2013, un jeune homme de 29 ans surprend le monde entier en quittant la communauté du renseignement et en révélant que le gouvernement des États-Unis poursuit le projet secret de collecter toutes nos conversations téléphoniques, nos textos et nos emails. Il révèle pour la première fois dans ce livre son histoire, comment il a participé à la mise en place de ce système et la crise de conscience qui l\'a conduit à la révéler au public.' + injection,
+      auteur: 5,
+      pages: 384,
+      prix: 19,
     },
   },
 ]
@@ -319,4 +353,5 @@ export const allAPI = [
   ...ocean,
   ...pokekmon,
   ...UHA40,
+  ...livres,
 ]
