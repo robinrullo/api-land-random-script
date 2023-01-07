@@ -25,7 +25,7 @@ const getApiCollections = async (): Promise<Response> => {
 }
 
 const getApiCollection = async ({ collectionName }: CollectionNameParam): Promise<Response> => {
-  const body: APICollectionResource = await getCollectionByName(collectionName)
+  const body: APICollectionResource = await getCollectionByName(decodeURI(collectionName))
   const headers = {
     'Access-Control-Allow-Origin': '*',
     'Content-type': 'application/json',
@@ -47,7 +47,7 @@ const updateApiCollection = async (
     collectionName,
     content,
   }: CollectionNameParam & RequestBody<APICollectionResource>): Promise<Response> => {
-  const body: APICollectionResource = await updateCollection(collectionName, content, false)
+  const body: APICollectionResource = await updateCollection(decodeURI(collectionName), content, false)
   const headers = {
     'Access-Control-Allow-Origin': '*',
     'Content-type': 'application/json',
@@ -56,7 +56,7 @@ const updateApiCollection = async (
 }
 
 const deleteApiCollection = async ({ collectionName }: CollectionNameParam): Promise<Response> => {
-  const body: APICollectionResource = await deleteCollection(collectionName)
+  const body: APICollectionResource = await deleteCollection(decodeURI(collectionName))
   const headers = {
     'Access-Control-Allow-Origin': '*',
     'Content-type': 'application/json',
@@ -69,7 +69,7 @@ const getApiResource = async (
     collectionName,
     resourceName,
   }: CollectionNameParam & ResourceNameParam): Promise<Response> => {
-  const body: APIResource = await getResourceByName(collectionName, resourceName)
+  const body: APIResource = await getResourceByName(decodeURI(collectionName), decodeURI(resourceName))
   const headers = {
     'Access-Control-Allow-Origin': '*',
     'Content-type': 'application/json',
@@ -82,7 +82,7 @@ const createApiResource = async (
     collectionName,
     content,
   }: CollectionNameParam & RequestBody<APIResource>): Promise<Response> => {
-  const body: APIResource = await addResource(collectionName, content)
+  const body: APIResource = await addResource(decodeURI(collectionName), content)
   const headers = {
     'Access-Control-Allow-Origin': '*',
     'Content-type': 'application/json',
@@ -97,7 +97,7 @@ const updateApiResource = async (
     content,
   }: CollectionNameParam & ResourceNameParam & RequestBody<APIResource>
 ): Promise<Response> => {
-  const body: APIResource = await updateResource(collectionName, resourceName, content)
+  const body: APIResource = await updateResource(decodeURI(collectionName), decodeURI(resourceName), content)
   const headers = {
     'Access-Control-Allow-Origin': '*',
     'Content-type': 'application/json',
@@ -110,7 +110,7 @@ const deleteApiResource = async (
     collectionName,
     resourceName,
   }: CollectionNameParam & ResourceNameParam): Promise<Response> => {
-  const body: APIResource = await deleteResource(collectionName, resourceName)
+  const body: APIResource = await deleteResource(decodeURI(collectionName), decodeURI(resourceName))
   const headers = {
     'Access-Control-Allow-Origin': '*',
     'Content-type': 'application/json',
