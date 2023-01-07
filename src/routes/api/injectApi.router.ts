@@ -6,4 +6,4 @@ const { handle, get } = ThrowableRouter({ base: '/api/inject' })
 get('/all', injectApiController.injectAll)
 get('/resetAll', injectApiController.resetAll)
 
-export { handle as injectApi }
+export { handle as injectApiRouter }

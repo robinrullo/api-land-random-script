@@ -1,10 +1,12 @@
-import { APIInject, ApiResponseStatus } from '../types'
-import { allAPI } from '../APIEntries.constants'
+import { ApiResponseStatus } from '../types'
+import { API_ENDPOINT, API_RESET_ENDPOINT, XSS_INJECTION } from '../APIEntries.constants'
+import { getAll } from './apis.service'
 
-const makeInjection = async (API: APIInject): Promise<Response> => {
-  return await fetch(API.endpoint, {
+const makeInjection = async (path: string, content: string): Promise<Response> => {
+  console.log('makeInjection', path, content)
+  return await fetch(path, {
     method: 'POST',
-    body: JSON.stringify(API.content),
+    body: content,
     headers: {
       'content-type': 'application/json;charset=UTF-8',
     },
@@ -13,13 +15,18 @@ const makeInjection = async (API: APIInject): Promise<Response> => {
 
 export const injectAllApi = async (): Promise<ApiResponseStatus[]> => {
   const fetchResponses: ApiResponseStatus[] = []
-  for (const API of allAPI) {
-    const res = await makeInjection(API)
-    fetchResponses.push({
-      apiEndpoint: API.endpoint,
-      statusCode: res.status,
-      statusText: res.statusText,
-    })
+  const apiResource = await getAll()
+  for (const apiCollection of apiResource) {
+    for (const api of apiCollection.children) {
+      const endpoint = `${API_ENDPOINT}/${apiCollection.path}/${api.path}`
+      const content = JSON.stringify(api.content).replace(/{{\s*injection\s*}}/gmi, XSS_INJECTION)
+      const res = await makeInjection(endpoint, content)
+      fetchResponses.push({
+        apiEndpoint: endpoint,
+        statusCode: res.status,
+        statusText: res.statusText,
+      })
+    }
   }
 
   return fetchResponses
@@ -27,9 +34,9 @@ export const injectAllApi = async (): Promise<ApiResponseStatus[]> => {
 
 export const resetAllApi = async (): Promise<ApiResponseStatus[]> => {
   const responses: ApiResponseStatus[] = []
+  const apiResource = await getAll()
 
-  const resetEndpoints = new Set(allAPI.map((api) => api.resetEndpoint))
-
+  const resetEndpoints = apiResource.map((api) => `${API_RESET_ENDPOINT}/${api.path}`)
   for (const resetEndpoint of resetEndpoints) {
     const res = await fetch(resetEndpoint)
     responses.push({

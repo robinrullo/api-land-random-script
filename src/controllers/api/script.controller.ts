@@ -7,17 +7,12 @@ import {
   getById,
   update,
 } from '../../services/script.service'
-import { Script, scriptFilter } from '../../types'
+import { RequestBody, RequestParam, Script, scriptFilter } from '../../types'
 
 type IdParam = {
   id: string
 }
-type RequestParam<T extends string, U> = {
-  [key in T]: U
-}
-type RequestBody<T> = {
-  content: T
-}
+
 
 const getScriptById = async ({ id }: IdParam): Promise<Response> => {
   const script = await getById(+id)

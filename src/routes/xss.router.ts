@@ -1,5 +1,5 @@
 import { ThrowableRouter, withParams } from 'itty-router-extras'
-import injectionController from '../controllers/jsScritp.controller'
+import injectionController from '../controllers/xss.controller'
 
 const { handle, all } = ThrowableRouter()
 

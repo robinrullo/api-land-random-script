@@ -1,7 +1,7 @@
 import { StatusError, ThrowableRouter, withParams } from 'itty-router-extras'
 import { apiRouter } from './api.router'
 import testController from '../controllers/test.controller'
-import { jsScriptRouter } from './jsScript.router'
+import { jsScriptRouter } from './xss.router'
 
 const { handle, all, get } = ThrowableRouter()
 

@@ -2,7 +2,7 @@ import { handleRequest } from './routes/index.router'
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'GET,HEAD,POST,PUT,OPTIONS',
+  'Access-Control-Allow-Methods': '*',
   'Access-Control-Max-Age': '86400',
 }
 
@@ -26,7 +26,7 @@ function handleOptions(request) {
   } else {
     return new Response(null, {
       headers: {
-        Allow: 'GET, HEAD, POST, OPTIONS',
+        Allow: '*',
       },
     })
   }
@@ -34,11 +34,10 @@ function handleOptions(request) {
 
 addEventListener('fetch', (event) => {
   const request = event.request
-  const url = new URL(request.url)
   if (request.method === 'OPTIONS') {
     // Handle CORS preflight requests
     event.respondWith(handleOptions(request))
-  } else if (['GET', 'HEAD', 'POST', 'PUT'].includes(request.method)) {
+  } else {
     // Handle requests to the API server
     event.respondWith(
       handleRequest(request).then((response) => {
@@ -46,13 +45,6 @@ addEventListener('fetch', (event) => {
           response.headers.set(key, value)
         })
         return response
-      }),
-    )
-  } else {
-    event.respondWith(
-      new Response(null, {
-        status: 405,
-        statusText: 'Method Not Allowed',
       }),
     )
   }
